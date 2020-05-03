@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cliente</title>
+</head>
+<body>
+
+<div class="content">
+    <div class="header">
+        <label id="userName"></label>
+    </div>
+    <div class="body">
+        <div class="aside">
+            <ul id="clients">
+
+            </ul>
+        </div>
+        <div class="room">
+            <div class="messages">
+                <ul id="chat">
+
+                </ul>
+            </div>
+            <div class="input">
+                <form id="form">
+                    <input id="message" type="text">
+                    <button>>></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="/static/socket.io/socket.io.js"></script>
+<script src="/static/js/client.js"></script>
+</body>
+</html>

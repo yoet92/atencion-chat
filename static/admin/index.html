@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin</title>
+    <style>
+        .selected {
+            color: darkblue !important;
+        }
+        .quest {
+            color: darkred;
+        }
+    </style>
+</head>
+<body>
+<h1>Admin</h1>
+<a href="/logout">Logout</a>
+
+<div class="content">
+    <div class="header">
+        <label id="userName"></label>
+    </div>
+    <div class="body">
+        <div class="aside">
+            <ul id="clients">
+
+            </ul>
+        </div>
+        <div class="room">
+            <div class="messages">
+                <ul id="chat">
+
+                </ul>
+            </div>
+            <div class="input">
+                <form id="form">
+                    <input id="message" type="text">
+                    <button>>></button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+<script src="/static/socket.io/socket.io.js"></script>
+<script src="/static/js/admin.js"></script>
+</body>
+</html>

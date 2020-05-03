@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+        input {
+            display: block;
+        }
+        label {
+            color: #ff523c;
+        }
+    </style>
+</head>
+<body>
+<h1>Login</h1>
+<form id='form'>
+    <input id="user" type="text" placeholder="User">
+    <input id="pass" type="password" placeholder="Password">
+    <input type='submit'>
+</form>
+<label id="response"></label>
+<script>
+    var testForm = document.getElementById('form');
+
+    testForm.onsubmit = function(event) {
+        event.preventDefault();
+        var user = document.getElementById('user');
+        var pass = document.getElementById('pass');
+        var data = {
+            user: user.value,
+            pass: pass.value
+        };
+        var request = new XMLHttpRequest();
+        request.open('POST', '/login', true);
+        request.setRequestHeader('Content-Type', 'application/json');
+        request.send(JSON.stringify(data));
+        request.onload = function() {
+            if (this.status === 200) {
+                window.location = '/admin';
+            }
+            if (this.status === 403) {
+                var res = JSON.parse(this.response);
+                document.getElementById('response').innerText = res.msg;
+            }
+        };
+    }
+</script>
+</body>
+</html>

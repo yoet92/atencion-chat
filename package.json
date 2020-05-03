@@ -1,0 +1,23 @@
+{
+  "name": "atencion-chat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "git": "https://github.com/yoet92/atencion-chat.git",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^13.13.4",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

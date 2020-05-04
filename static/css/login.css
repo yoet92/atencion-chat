@@ -1,0 +1,64 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
+    color: #4a4a4a;
+    user-select: none;
+    vertical-align: baseline;
+    outline: none;
+    text-align: center;
+    background-color: #e5ddd5;
+    font-family: "Segoe UI", "Helvetica Neue", "Helvetica", "Lucida Grande", Arial, "Ubuntu", "Cantarell", "Fira Sans", sans-serif;
+}
+@keyframes effect {
+    0% {
+        transform: scale(1.4);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+h1 {
+    margin: 0;
+}
+a {
+    color: #4a4a4a;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+    text-align: left;
+    padding-left: 15px;
+}
+.content {
+    width: 100%;
+    max-width: 200px;
+    margin: 40px auto;
+    animation: effect 0.3s cubic-bezier(0.1, 0.82, 0.25, 1);
+}
+.content form {
+    margin-top: 10px;
+}
+.content form input {
+    border-style: solid;
+    border-width: 1px;
+    padding: 9px 12px 11px 12px;
+    margin: 5px 10px;
+    box-sizing: border-box;
+    flex: 1 1 auto;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 20px;
+    min-height: 20px;
+    min-width: 0;
+    outline: none;
+    width: 100%;
+    will-change: width;
+}
+input {
+    border-color: #4a4a4a;
+}

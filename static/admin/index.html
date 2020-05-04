@@ -2,45 +2,119 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
-    <style>
-        .selected {
-            color: darkblue !important;
-        }
-        .quest {
-            color: darkred;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-<h1>Admin</h1>
-<a href="/logout">Logout</a>
+
 
 <div class="content">
-    <div class="header">
-        <label id="userName"></label>
-    </div>
-    <div class="body">
-        <div class="aside">
-            <ul id="clients">
 
-            </ul>
-        </div>
-        <div class="room">
-            <div class="messages">
-                <ul id="chat">
+    <div class="aside">
 
-                </ul>
+        <header>
+            <div class="avatar-current-user">
+                <div class="avatar-container">
+                    <img src="/static/img/hombre.svg"/>
+                </div>
             </div>
-            <div class="input">
-                <form id="form">
-                    <input id="message" type="text">
-                    <button>>></button>
-                </form>
+            <div class="user-info">
+                <div class="user-container">
+                    <span id="userName"></span>
+                </div>
+
             </div>
+        </header>
+
+        <div class="list-user" id="clients">
+
+            <div class="user-li">
+                <div class="user-li-content">
+                    <div class="avatar">
+                        <div class="avatar-container">
+                            <img src="/static/img/hombre.svg"/>
+                        </div>
+                    </div>
+                    <div class="user-info">
+                        <div class="name">
+                            <span>Yoel Duran Diaz</span>
+                            <div class="info">
+                                <span>15</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </div>
 
+    <div class="room">
+
+        <div class="header">
+            <div class="avatar-active">
+                <div class="avatar-container">
+                    <img src="/static/img/hombre.svg"/>
+                </div>
+            </div>
+            <div class="user-info">
+                <div class="user-container">
+                    <span id="userActive"></span>
+                </div>
+                <div class="logout">
+                    <a href="/logout"><svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sign-out-alt" class="svg-inline--fa fa-sign-out-alt fa-w-16" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="currentColor" d="M497 273L329 441c-15 15-41 4.5-41-17v-96H152c-13.3 0-24-10.7-24-24v-96c0-13.3 10.7-24 24-24h136V88c0-21.4 25.9-32 41-17l168 168c9.3 9.4 9.3 24.6 0 34zM192 436v-40c0-6.6-5.4-12-12-12H96c-17.7 0-32-14.3-32-32V160c0-17.7 14.3-32 32-32h84c6.6 0 12-5.4 12-12V76c0-6.6-5.4-12-12-12H96c-53 0-96 43-96 96v192c0 53 43 96 96 96h84c6.6 0 12-5.4 12-12z"></path></svg></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="messages">
+            <div class="messages-container">
+                <div class="messages-body">
+
+                    <div class="copyable-area msg in">
+
+                        <div class="msg-body">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path><path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path></svg></span>
+                            <div class="msg">
+                                <span>Hola, como estas ???</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="copyable-area msg out">
+
+                        <div class="msg-body">
+                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" d="M5.188 1H0v11.193l6.467-8.625C7.526 2.156 6.958 1 5.188 1z"></path><path fill="currentColor" d="M5.188 0H0v11.193l6.467-8.625C7.526 1.156 6.958 0 5.188 0z"></path></svg></span>
+                            <div class="msg">
+                                <span>Hola, como estas ???</span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-container copyable-area">
+                <div class="form-body">
+                    <form id="form">
+                        <input autocomplete="off" placeholder="Escribe un mensage" id="message" type="text">
+                    </form>
+                </div>
+                <div class="btn-container">
+                    <button><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>
+                </div>
+            </div>
+        </footer>
+
+
+    </div>
 </div>
 
 

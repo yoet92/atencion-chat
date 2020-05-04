@@ -2,31 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <style>
-        input {
-            display: block;
-        }
-        label {
-            color: #ff523c;
-        }
-    </style>
+    <link rel="stylesheet" href="/static/css/login.css">
 </head>
 <body>
-<h1>Login</h1>
-<form id='form'>
-    <input id="user" type="text" placeholder="User">
-    <input id="pass" type="password" placeholder="Password">
-    <input type='submit'>
-</form>
-<label id="response"></label>
+<div class="content">
+    <h1>Login</h1>
+    <form id='form'>
+        <input id="user" type="text" placeholder="User">
+        <input id="pass" type="password" placeholder="Password">
+        <input type='submit' value="Entrar">
+    </form>
+    <a href="/">&#171; ir atras</a>
+    <label id="response"></label>
+</div>
 <script>
     var testForm = document.getElementById('form');
-
+    var user = document.getElementById('user');
+    var pass = document.getElementById('pass');
+    window.addEventListener('load', function () {
+        user.focus();
+    });
     testForm.onsubmit = function(event) {
         event.preventDefault();
-        var user = document.getElementById('user');
-        var pass = document.getElementById('pass');
         var data = {
             user: user.value,
             pass: pass.value
@@ -42,6 +41,7 @@
             if (this.status === 403) {
                 var res = JSON.parse(this.response);
                 document.getElementById('response').innerText = res.msg;
+                user.focus();
             }
         };
     }

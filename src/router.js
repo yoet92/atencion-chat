@@ -4,8 +4,6 @@ const path = require('path');
 const users = require('./users-admin');
 const staticUrl = path.join(__dirname, '../', 'static');
 
-const clients = [];
-let countClients = 0;
 
 function requireAuth(req, res, next) {
     const user = req.session.user;

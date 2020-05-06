@@ -2,13 +2,11 @@ const usersAdmin = [
     {
         name: 'Yoel Duran',
         user: 'yduran',
-        group: 'admin',
-        pass: 'mypass'
+        pass: 'yduran'
     },
     {
         name: 'Ayudante',
         user: 'demo',
-        group: 'admin',
         pass: 'demo'
     },
 ];

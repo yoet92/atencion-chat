@@ -3,14 +3,29 @@ const usersConnected = {};
 module.exports = (io) => {
     io.on('connection', socket => {
 
-        socket.on('register', function (user) {
-            user.sid = socket.id;
-            usersConnected[user.user] = user;
-            io.sockets.emit('getclients', Object.keys(usersConnected));
+        socket.on('register', function (newUser) {
+            newUser.sid = socket.id;
+            newUser.newMessages = [];
+            newUser.address = socket.handshake.address;
+            newUser.name = socket.handshake.address; // Temporal
+            usersConnected[newUser.user] = newUser;
+            io.sockets.emit('clients', usersConnected);
+        });
+
+        socket.on('getclients', function () {
+            io.sockets.emit('clients', usersConnected);
         });
 
         socket.on('req', function (data) {
+            usersConnected[data.from.user].newMessages.push(data.msg);
             io.sockets.emit('quest', data);
+        });
+
+        socket.on('delNewMessages', function (user) {
+            if (usersConnected[user]) {
+                usersConnected[user].newMessages = [];
+            }
+            io.sockets.emit('deletedNewMessages', user);
         });
 
         socket.on('private', function (data) {
@@ -22,7 +37,13 @@ module.exports = (io) => {
         });
 
         socket.on('disconnect', (reason) => {
-            console.log(`user ${socket.id} left the room: ${reason}`);
+            const current = Object.keys(usersConnected).find(function (u) {
+                return usersConnected[u].sid === socket.id;
+            });
+            if (current) {
+                delete usersConnected[current];
+                io.sockets.emit('userleft', current);
+            }
         });
     })
 };

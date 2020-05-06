@@ -29,24 +29,6 @@
 
         <div class="list-user" id="clients">
 
-            <div class="user-li">
-                <div class="user-li-content">
-                    <div class="avatar">
-                        <div class="avatar-container">
-                            <img src="/static/img/hombre.svg"/>
-                        </div>
-                    </div>
-                    <div class="user-info">
-                        <div class="name">
-                            <span>Yoel Duran Diaz</span>
-                            <div class="info">
-                                <span>15</span>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
 
         </div>
     </div>
@@ -71,29 +53,7 @@
 
         <div class="messages">
             <div class="messages-container">
-                <div class="messages-body">
-
-                    <div class="copyable-area msg in">
-
-                        <div class="msg-body">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" fill="#0000000" d="M1.533 3.568L8 12.193V1H2.812C1.042 1 .474 2.156 1.533 3.568z"></path><path fill="currentColor" d="M1.533 2.568L8 11.193V0H2.812C1.042 0 .474 1.156 1.533 2.568z"></path></svg></span>
-                            <div class="msg">
-                                <span>Hola, como estas ???</span>
-                            </div>
-                        </div>
-
-                    </div>
-
-                    <div class="copyable-area msg out">
-
-                        <div class="msg-body">
-                            <span class="icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 8 13" width="8" height="13"><path opacity=".13" d="M5.188 1H0v11.193l6.467-8.625C7.526 2.156 6.958 1 5.188 1z"></path><path fill="currentColor" d="M5.188 0H0v11.193l6.467-8.625C7.526 1.156 6.958 0 5.188 0z"></path></svg></span>
-                            <div class="msg">
-                                <span>Hola, como estas ???</span>
-                            </div>
-                        </div>
-
-                    </div>
+                <div class="messages-body" id="chat">
 
 
                 </div>
@@ -104,11 +64,11 @@
             <div class="footer-container copyable-area">
                 <div class="form-body">
                     <form id="form">
-                        <input autocomplete="off" placeholder="Escribe un mensage" id="message" type="text">
+                        <input autocomplete="off" placeholder="Escribe un mensage..." id="message" type="text">
                     </form>
                 </div>
                 <div class="btn-container">
-                    <button><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>
+                    <button type="submit" form="form"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill="currentColor" d="M1.101 21.757L23.8 12.028 1.101 2.3l.011 7.912 13.623 1.816-13.623 1.817-.011 7.912z"></path></svg></span></button>
                 </div>
             </div>
         </footer>
@@ -120,6 +80,7 @@
 
 
 <script src="/static/socket.io/socket.io.js"></script>
+<script src="/static/js/main.js"></script>
 <script src="/static/js/admin.js"></script>
 </body>
 </html>
